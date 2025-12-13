@@ -1,0 +1,171 @@
+(footprint "SW_PUSH_L4.0-W3.0-LS5.0_SMD"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "Tactile SMD push button, 4x3mm")
+	(property "Reference" "REF**"
+		(at 0 -2.5 0)
+		(layer "F.SilkS")
+		(uuid "1ec22907-a9f2-43fd-afca-a1d32e35ffab")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "SW_PUSH_L4.0-W3.0-LS5.0_SMD"
+		(at 0 4 0)
+		(layer "F.Fab")
+		(uuid "cf6bd198-032c-4b3f-b2a4-514c5933e2d1")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "907cf0a8-1c64-416c-b37b-ac7033f7d696")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5003c7b9-8ec5-472b-9aae-61ea78cd5a71")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -2 -1.5)
+		(end 2 -1.5)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "496f0b30-dded-4e76-bf67-8232b0897afe")
+	)
+	(fp_line
+		(start -2 -1.13)
+		(end -2 -1.5)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "be72430b-37bb-4f31-b125-c8227cab02a7")
+	)
+	(fp_line
+		(start -2 1.5)
+		(end -2 1.13)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "98ed4936-0785-4724-b9ba-59b81537326d")
+	)
+	(fp_line
+		(start 2 -1.5)
+		(end 2 -1.13)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "3af5625b-76f1-4dd4-921e-2c2d5f304885")
+	)
+	(fp_line
+		(start 2 1.13)
+		(end 2 1.5)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "091793e4-db31-432f-b26a-2ae8e7f8054c")
+	)
+	(fp_line
+		(start 2 1.5)
+		(end -2 1.5)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "fbb0d4b3-4b57-451c-bd83-7f5db5559708")
+	)
+	(fp_circle
+		(center 0 0)
+		(end 0.76 0)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "131b14e5-0073-4033-a002-0d3d1f2fb125")
+	)
+	(fp_rect
+		(start -3 -1.75)
+		(end 3 1.75)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "9d53171c-2f6d-4680-a622-d66f17acb9a7")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "db041976-7823-40f1-8d6f-ac52a7c9e156")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -2.2 0)
+		(size 1.35 2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "a7c74377-01bd-4bc4-aeec-62877e7858f0")
+	)
+	(pad "2" smd rect
+		(at 2.2 0)
+		(size 1.35 2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "619213c7-dd5f-4f62-846e-05e73f222db5")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/CustomLibrary.3dshapes/SW-SMD_L4.0-W3.0-H2-LS5.0.wrl"
+		(offset
+			(xyz 0 -0 1.5)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -0 -0 -0)
+		)
+	)
+)
