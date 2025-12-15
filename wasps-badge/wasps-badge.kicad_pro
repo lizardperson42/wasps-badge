@@ -628,5 +628,13 @@
       "Root"
     ]
   ],
-  "text_variables": {}
+  "text_variables": {
+    "COMPANY": "Wicked Agile Stinging Pests Society",
+    "DATE": "2025-12-15",
+    "GITHUB_PREFIX": "github.com/lizardperson42/",
+    "GITHUB_PROJECT": "wasps-badge",
+    "REVISION": "1",
+    "TITLE": "WASPS Badge",
+    "URL": "https://wasp.systems"
+  }
 }
