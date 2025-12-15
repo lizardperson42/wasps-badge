@@ -58,6 +58,7 @@
 			)
 		)
 	)
+	(attr board_only exclude_from_pos_files exclude_from_bom)
 	(fp_poly
 		(pts
 			(xy -20.522869 -5.176472) (xy -20.355968 -5.175286) (xy -20.203567 -5.172108) (xy -20.065071 -5.166734)
