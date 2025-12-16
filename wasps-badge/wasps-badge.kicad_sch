@@ -4536,6 +4536,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C12624"
+			(at 207.01 108.2674 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "757d8a89-216e-4dfa-ac8d-664163a89451")
 		)
@@ -4872,6 +4881,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C41375971"
+			(at 38.1 71.12 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "dd00a83c-6d3e-463e-98f5-bec54f3b30b1")
 		)
@@ -4974,7 +4992,7 @@
 				)
 			)
 		)
-		(property "Value" "WS2812B_MINI"
+		(property "Value" "WS2812B"
 			(at 166.37 95.25 0)
 			(effects
 				(font
@@ -5293,6 +5311,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C70377"
+			(at 41.91 79.4384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "95317564-f44c-4424-bd52-2e1158b28144")
 		)
@@ -5356,6 +5383,15 @@
 		)
 		(property "Description" "Resistor"
 			(at 228.6 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C4190"
+			(at 231.14 99.0599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5781,6 +5817,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C965799"
+			(at 232.41 108.2674 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "954eaf83-eca5-4462-8aef-1af64882ee47")
 		)
@@ -5995,6 +6040,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C965799"
+			(at 219.71 108.2674 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "240fe73b-a577-4dee-bfae-7a2cc20d42f1")
 		)
@@ -6058,6 +6112,15 @@
 		)
 		(property "Description" "Resistor"
 			(at 203.2 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C4184"
+			(at 205.74 99.0599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6303,7 +6366,7 @@
 				)
 			)
 		)
-		(property "Value" "WS2812B_MINI"
+		(property "Value" "WS2812B"
 			(at 185.42 95.25 0)
 			(effects
 				(font
@@ -6501,6 +6564,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C12624"
+			(at 245.11 108.2674 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "0b09fb9d-3973-4f7a-9f08-fb6d6b888a26")
 		)
@@ -6571,6 +6643,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5221275"
+			(at 130.81 86.3599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bb9f706f-abb1-47b6-8d50-62f091b97216")
 		)
@@ -6634,6 +6715,15 @@
 		)
 		(property "Description" "Push button switch, generic, two pins"
 			(at 254 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5221275"
+			(at 257.81 105.4099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6772,6 +6862,15 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 69.85 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C19702"
+			(at 73.66 74.9299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7110,6 +7209,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5116527"
+			(at 119.38 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "b6e2e175-f7d5-4f0c-8679-5885e66959d3")
 		)
@@ -7324,6 +7432,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C4190"
+			(at 218.44 99.0599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "222ec1d9-a2f7-4b71-a7a1-03704a4692bb")
 		)
@@ -7387,6 +7504,15 @@
 		)
 		(property "Description" "CH32V003 series are industrial-grade general-purpose microcontrollers designed based on 32-bit RISC-V instruction set and architecture. It adopts QingKe V2A core, RV32EC instruction set, and supports 2 levels of interrupt nesting. The series are mounted with rich peripheral interfaces and function modules. Its internal organizational structure meets the low-cost and low-power embedded application scenarios."
 			(at 101.6 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5187096"
+			(at 103.7433 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7515,6 +7641,15 @@
 		)
 		(property "Description" "Resistor"
 			(at 241.3 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C4184"
+			(at 243.84 99.0599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
