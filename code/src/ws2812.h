@@ -46,6 +46,10 @@ public:
 
 private:
     void outputBit(bool value);
+
+public:
+    // This is global for all LED chains (all it does is wait).
+    static void finishOutput();
 };
 
 #endif

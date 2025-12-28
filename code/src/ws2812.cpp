@@ -30,3 +30,7 @@ void WS2812::outputBit(bool value) {
                        "nop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\nnop\n" );
     }
 }
+
+void WS2812::finishOutput() {
+    delayMicroseconds(60);
+}
