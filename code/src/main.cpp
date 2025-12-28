@@ -50,24 +50,37 @@ struct FineHSV {
 #define PIN_RGB_FRONT PC6
 #define PIN_RGB_BACK  PC7
 
+#define PIN_BUTTON    PD0
+
 const int PINS[] = { PIN_LED_NOW, PIN_LED_0, PIN_LED_1, PIN_LED_2SLOW };
 
-unsigned counter = {};
+volatile unsigned counter = 0;
 unsigned rainbowCounter = 0;
 
 Color colors_front[2] = {};
 WS2812 output_front(colors_front, { GPIOC, 6 });
+
+void resetCounter() {
+    counter = 0;
+}
 
 void setup() {
     counter = 0;
     rainbowCounter = 0;
     for (int pin : PINS) pinMode(pin, OUTPUT);
     pinMode(PIN_RGB_FRONT, OUTPUT);
+    pinMode(PIN_BUTTON, INPUT_PULLUP);
+    // The CH32V003 framework does not use the normal Arduino API. :(
+    attachInterrupt(digitalPinToInterrupt(PIN_BUTTON), GPIO_Mode_IPU,
+                    resetCounter, EXTI_Mode_Interrupt, EXTI_Trigger_Falling);
 }
 
 void loop() {
-    counter = (counter + 1) & 7;
-    digitalWrite(PINS[counter & 3], counter >> 2 & 1);
+    unsigned curCounter = counter;
+    if (curCounter < 8 * 5) {
+        digitalWrite(PINS[curCounter & 3], !(curCounter >> 2 & 1));
+        counter = curCounter + 1;
+    }
     colors_front[0] = FineHSV(rainbowCounter, 255, 8);
     colors_front[1] = FineHSV((rainbowCounter + FineHSV::MAX_HUE / 2) %
                                   FineHSV::MAX_HUE,
