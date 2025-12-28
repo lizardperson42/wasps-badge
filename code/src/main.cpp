@@ -9,14 +9,17 @@
 #define PIN_RGB_FRONT PC6
 #define PIN_RGB_BACK  PC7
 
+const int PINS[] = { PIN_LED_NOW, PIN_LED_0, PIN_LED_1, PIN_LED_2SLOW };
+
+unsigned counter = {};
+
 void setup() {
     counter = 0;
-    pinMode(PIN_LED_NOW, OUTPUT);
+    for (int pin : PINS) pinMode(pin, OUTPUT);
 }
 
 void loop() {
-    digitalWrite(PIN_LED_NOW, 1);
-    delay(500);
-    digitalWrite(PIN_LED_NOW, 0);
-    delay(500);
+    counter = (counter + 1) & 7;
+    digitalWrite(PINS[counter & 3], counter >> 2 & 1);
+    delay(125);
 }
