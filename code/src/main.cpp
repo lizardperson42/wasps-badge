@@ -56,19 +56,13 @@ unsigned counter = {};
 unsigned rainbowCounter = 0;
 
 Color colors_front[2] = {};
-Color colors_back[3] = {};
 WS2812 output_front(colors_front, { GPIOC, 6 });
-WS2812 output_back(colors_back, { GPIOC, 7 });
 
 void setup() {
     counter = 0;
     rainbowCounter = 0;
     for (int pin : PINS) pinMode(pin, OUTPUT);
     pinMode(PIN_RGB_FRONT, OUTPUT);
-    pinMode(PIN_RGB_BACK, OUTPUT);
-    colors_back[0] = { 8, 0, 0 };
-    colors_back[1] = { 0, 8, 0 };
-    colors_back[2] = { 0, 0, 8 };
 }
 
 void loop() {
@@ -79,7 +73,6 @@ void loop() {
                                   FineHSV::MAX_HUE,
                               255, 8);
     output_front.output();
-    output_back.output();
     rainbowCounter = (rainbowCounter + FineHSV::MAX_HUE / 10 / 8) %
                          FineHSV::MAX_HUE;
     delay(125);
