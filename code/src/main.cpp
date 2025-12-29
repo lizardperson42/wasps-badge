@@ -42,6 +42,26 @@ struct FineHSV {
     }
 };
 
+class RainbowGenerator {
+    Color &_output;
+    uint16_t _counter;
+    uint16_t _step;
+    uint8_t _saturation;
+    uint8_t _value;
+
+public:
+    RainbowGenerator(Color &output, uint16_t step,
+                     uint8_t saturation, uint8_t value) :
+        _output(output), _counter(0), _step(step),
+        _saturation(saturation), _value(value) {}
+
+    void step() {
+        _output = FineHSV(_counter, _saturation, _value);
+        _counter += _step;
+        _counter %= FineHSV::MAX_HUE;
+    }
+};
+
 #define PIN_LED_NOW   PD3
 #define PIN_LED_2SLOW PD4
 #define PIN_LED_0     PD5
@@ -55,18 +75,20 @@ struct FineHSV {
 const int PINS[] = { PIN_LED_NOW, PIN_LED_0, PIN_LED_1, PIN_LED_2SLOW };
 
 volatile unsigned counter = 0;
-unsigned rainbowCounter = 0;
 
 Color colors_front[2] = {};
 WS2812 output_front(colors_front, { GPIOC, 6 });
+
+RainbowGenerator rainbow[] = {
+    { colors_front[0], FineHSV::MAX_HUE / 8 / 10, 255, 8 },
+    { colors_front[1], FineHSV::MAX_HUE / 8 / 7, 255, 8 }
+};
 
 void resetCounter() {
     counter = 0;
 }
 
 void setup() {
-    counter = 0;
-    rainbowCounter = 0;
     for (int pin : PINS) pinMode(pin, OUTPUT);
     pinMode(PIN_RGB_FRONT, OUTPUT);
     pinMode(PIN_BUTTON, INPUT_PULLUP);
@@ -81,12 +103,7 @@ void loop() {
         digitalWrite(PINS[curCounter & 3], !(curCounter >> 2 & 1));
         counter = curCounter + 1;
     }
-    colors_front[0] = FineHSV(rainbowCounter, 255, 8);
-    colors_front[1] = FineHSV((rainbowCounter + FineHSV::MAX_HUE / 2) %
-                                  FineHSV::MAX_HUE,
-                              255, 8);
+    for (auto &r : rainbow) r.step();
     output_front.output();
-    rainbowCounter = (rainbowCounter + FineHSV::MAX_HUE / 10 / 8) %
-                         FineHSV::MAX_HUE;
     delay(125);
 }
