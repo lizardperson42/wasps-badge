@@ -34,7 +34,7 @@ jobs:
                   board: "wasps-badge/wasps-badge.kicad_pcb"
             - name: upload results
               if: ${{ always() }}
-              uses: actions/upload-artifact@v4
+              uses: actions/upload-artifact@v6
               with:
                   name: output
                   path: output
