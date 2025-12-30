@@ -51,6 +51,9 @@ A PlatformIO project for a firmware adding basic blinkenlights can be found in
 `code/`. Since field testing has indicated that the through-board LEDs are a
 little too focused for the intended effect, they are not driven.
 
+The code runs the MCU in a busy loop, limiting battery life. Pull requests to
+improve energy efficiency are welcome.
+
 CTF functionality is not included, pull requests welcome.
 
 If you have issues with compiling the firmware, a pre-compiled image is
