@@ -1,0 +1,84 @@
+name: kibot
+
+on:
+    push:
+        paths:
+            - ".github/workflows/kibot.yaml"
+            - "**.kicad_pcb"
+            - "**.kicad_sch"
+            - "wasps-badge/config.kibot.yaml"
+
+    pull_request:
+        paths:
+            - "**.kicad_sch"
+            - "**.kicad_pcb"
+
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+jobs:
+    kibot:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v5
+            - uses: INTI-CMNB/KiBot@v2_k9
+              with:
+                  # Required - kibot config file
+                  config: wasps-badge/config.kibot.yaml
+                  # optional - prefix to output defined in config
+                  dir: output
+                  schema: "wasps-badge/wasps-badge.kicad_sch"
+                  # optional - PCB design file
+                  board: "wasps-badge/wasps-badge.kicad_pcb"
+            - name: upload results
+              if: ${{ always() }}
+              uses: actions/upload-artifact@v4
+              with:
+                  name: output
+                  path: output
+
+            - name: Upload artifact (GitHub pages)
+              uses: actions/upload-pages-artifact@v4
+              with:
+                  path: output/Assembly
+
+    # Deployment job
+    deploy:
+        if: github.ref == 'refs/heads/main'
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        runs-on: ubuntu-latest
+        needs: kibot
+        steps:
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4
+
+    # Release job
+    release:
+        if: github.ref_type == 'tag'
+        runs-on: ubuntu-latest
+        needs: kibot
+        steps:
+            - name: Check out repository
+              uses: actions/checkout@v6
+
+            - name: Download output artifact
+              uses: actions/download-artifact@v7
+              with:
+                  name: output
+                  path: output
+
+            - name: Compress JLCPCB files
+              run: zip -r jlcpcb.zip output/JLCPCB
+
+            - name: Release
+              uses: softprops/action-gh-release@v2
+              if: github.ref_type == 'tag'
+              with:
+                  files: |
+                      output/Assembly/index.html
+                      jlcpcb.zip
