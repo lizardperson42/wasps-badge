@@ -5196,7 +5196,7 @@
 		(path "/32ea3d43-5b21-4423-8542-b3d06a54d055")
 		(sheetname "/")
 		(sheetfile "wasps-badge.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_bom dnp)
 		(fp_circle
 			(center 0 0)
 			(end 0 2)
@@ -5858,7 +5858,7 @@
 		(path "/973683e4-14fc-4fc1-832e-ebb637e4a457")
 		(sheetname "/")
 		(sheetfile "wasps-badge.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_bom dnp)
 		(fp_circle
 			(center 0 0)
 			(end 0 2)
@@ -6766,7 +6766,7 @@
 		(path "/002860c8-8779-4384-ba1a-84108bbbefa1")
 		(sheetname "/")
 		(sheetfile "wasps-badge.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_bom dnp)
 		(fp_circle
 			(center 0 0)
 			(end 0 2)
