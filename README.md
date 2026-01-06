@@ -13,9 +13,9 @@ CAD files for the hardware are provided in KiCad format in `wasps-badge/`.
 The badge features three 0.1in-pitch pin headers. Their silkscreen markings
 are partially absent or obscured; Pin 1 can be recognized by its square pad.
 Their locations are given as in the design files, where the mounting hole is
-on top.
+on top, looking at the front of the board.
 
-| Header | Location    | Notes                |
+| Header | Location    | Description          |
 | ------ | ----------- | -------------------- |
 | J1     | Bottom      | Flashing connector   |
 | J2     | Bottom left | CTF breakout         |
@@ -28,7 +28,7 @@ Pinouts:
 | J1     | 1      | GND        | GND                                  |
 | J1     | 2      | VDD        | 3.3V                                 |
 | J1     | 3      | SWIO / PD1 | SWIO (MCU flashing connection)       |
-| J1     | 4      | NRST / PD7 | RST (MCU reset)                      |
+| J1     | 4      | NRST / PD7 | RST (active-low MCU reset)           |
 | J2     | 1      | GND        | GND                                  |
 | J2     | 2      | PD0        | "Press me" button (pulled up by MCU) |
 | J2     | 3      | PD3        | "Now" LED                            |
@@ -41,8 +41,14 @@ Pinouts:
 | J3     | 5 (TR) | PC3        | GPIO                                 |
 | J3     | 6 (BR) | PC4        | GPIO                                 |
 
-There are two chains of WS2812B LEDs. The front LEDs are connected to pin PC6.
-The reverse-mounted back LEDs (NRND) are connected to pin PC7.
+On-board-only pinout:
+
+| MCU pin    | Description                                                   |
+| ---------- | ------------------------------------------------------------- |
+| NRST / PD7 | "Reset" button                                                |
+| PD4        | "Too slow" LED                                                |
+| PC6        | Front RGB LEDs (WS2812B, chain length 2)                      |
+| PC7        | Reverse-mounted back RGB LEDs (WS2812B, chain length 3, NRND) |
 
 
 ## Software
