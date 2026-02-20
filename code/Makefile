@@ -15,13 +15,13 @@ upload: ## Upload firmware to device
 upload-rvprog-docker: ## Build firmware through Docker and upload using rvprog on host (also works on MacOS)
 	@if [ ! -d ".venv-docker" ]; then \
 		echo "Creating virtual environment..."; \
-		docker run --rm -it -v $(CURDIR):/workdir --workdir /workdir --platform linux/amd64 $(PYTHON_IMAGE) python3 -m venv .venv-docker; \
+		docker run --rm -it -v .:/workdir --workdir /workdir --platform linux/amd64 $(PYTHON_IMAGE) python3 -m venv .venv-docker; \
 	fi
 	@if [ ! -f ".venv-docker/bin/platformio" ]; then \
 		echo "Installing platformio..."; \
-		docker run --rm -it -v $(CURDIR):/workdir --workdir /workdir --platform linux/amd64 $(PYTHON_IMAGE) .venv-docker/bin/pip install -U platformio; \
+		docker run --rm -it -v .:/workdir --workdir /workdir --platform linux/amd64 $(PYTHON_IMAGE) .venv-docker/bin/pip install -U platformio; \
 	fi
-	docker run --rm -it -v $(CURDIR):/workdir -v $(CURDIR)/.pio-docker/:/root/.platformio/ --workdir /workdir --platform linux/amd64 $(PYTHON_IMAGE) .venv-docker/bin/platformio run --environment ch32
+	docker run --rm -it -v .:/workdir -v ./.pio-docker/:/root/.platformio/ --workdir /workdir --platform linux/amd64 $(PYTHON_IMAGE) .venv-docker/bin/platformio run --environment ch32
 	@if [ ! -d ".venv" ]; then \
 		echo "Creating virtual environment..."; \
 		python3 -m venv .venv; \
